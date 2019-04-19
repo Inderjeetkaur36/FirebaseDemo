@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "337698106026",
+    "firebase_url": "https://heaven-978c9.firebaseio.com",
+    "project_id": "heaven-978c9",
+    "storage_bucket": "heaven-978c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337698106026:android:a40ed6eb08e920be",
+        "android_client_info": {
+          "package_name": "com.example.firebasedemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWYepADdXFeUXquILN6lu7LVDGDtfPLZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337698106026-3rokm115d6oere1fuq9lpep7qs4om2ol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
