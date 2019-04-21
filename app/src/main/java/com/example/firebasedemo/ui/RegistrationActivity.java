@@ -113,7 +113,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isComplete()) {
-                                Toast.makeText(RegistrationActivity.this, user.name + "User created ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegistrationActivity.this, user.name + " created ", Toast.LENGTH_LONG).show();
                                // progressDialog.dismiss();
                                /* Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                                 startActivity(intent);

@@ -7,11 +7,6 @@
     android:padding="16dp"
     android:id="@+id/recyclerView"
 
-    android:layout_marginTop="5dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginBottom="5dp"
-
     tools:context=".ui.FirstActivity">
 
 </android.support.v7.widget.RecyclerView>

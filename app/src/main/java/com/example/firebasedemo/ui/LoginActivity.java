@@ -18,15 +18,18 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText eTxtEmail,eTxtPassword;
+    EditText eTxtEmail, eTxtPassword;
     Button btnLogin;
     ProgressDialog progressDialog;
     User user;
     FirebaseAuth auth;
 
-    void initViews(){
+    void initViews() {
         eTxtEmail = findViewById(R.id.editTextEmail);
         eTxtPassword = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.buttonLogin);
@@ -39,6 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         auth = FirebaseAuth.getInstance();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +52,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        user.email = eTxtEmail.getText().toString();
+
+        String validemail = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}"+
+                "\\@"+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}"+
+                "("+
+                "\\."+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}"+
+                ")+";
+
+        String email = eTxtEmail.getText().toString();
+        Matcher matcher = Pattern.compile(validemail).matcher(email);
+        if(matcher.matches()){
+            Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG).show();
+        }
+        if (eTxtEmail.getText().toString().trim().length() == 0) {
+            eTxtEmail.setError("Email is not entered");
+            eTxtEmail.requestFocus();
+        }
+        if (eTxtPassword.getText().toString().trim().length() == 0) {
+            eTxtPassword.setError("Password is not entered");
+            eTxtPassword.requestFocus();
+        } else {
+
+            user.email = eTxtEmail.getText().toString();
         user.password = eTxtPassword.getText().toString();
         loginUser();
     }
 
+}
     void loginUser(){
         progressDialog.show();
 
