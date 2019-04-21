@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.firebasedemo.model.Util;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.firebasedemo.ui.FirstActivity;
+import com.example.firebasedemo.ui.RegistrationActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
-    FirebaseAuth auth;
-    FirebaseUser firebaseUser;
+   // FirebaseAuth auth;
+    //FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,8 @@ public class SplashActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        auth = FirebaseAuth.getInstance();
-        firebaseUser = auth.getCurrentUser();
+      //  auth = FirebaseAuth.getInstance();
+        //firebaseUser = auth.getCurrentUser();
 
         /*if(firebaseUser == null){
                 handler.sendEmptyMessageDelayed(101,3000);
@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             if (msg.what == 101) {
                 if (Util.isInternetConnected(SplashActivity.this)) {
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, FirstActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

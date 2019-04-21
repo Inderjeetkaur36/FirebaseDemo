@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import com.example.firebasedemo.R;
 import com.example.firebasedemo.adapter.RecyclerAdapter;
 import com.example.firebasedemo.model.Shoes;
@@ -62,7 +64,7 @@ public class DisplayActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Blue Pop");
         ButterKnife.bind(this);
-
+/*
         db.collection("Products").get()
                 .addOnCompleteListener(this, new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -87,7 +89,7 @@ public class DisplayActivity extends AppCompatActivity {
                         }
                     }
                 });
-
+*/
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,4 +101,18 @@ public class DisplayActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(1,101,1,"Log Out");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        Intent intent = new Intent(DisplayActivity.this,FirstActivity.class);
+       startActivity(intent);
+       finish();
+        return super.onOptionsItemSelected(item);
+    }
 }

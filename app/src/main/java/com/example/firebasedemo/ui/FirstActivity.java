@@ -1,9 +1,7 @@
 package com.example.firebasedemo.ui;
 
 import android.content.Intent;
-import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,9 +10,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.firebasedemo.R;
@@ -32,19 +33,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class FirstActivity extends AppCompatActivity implements OnRecyclerItemClickListener{
 
-    TextToSpeech tts;
     RecyclerView recyclerView;
     ArrayList<Shoes> list;
 
     RecyclerAdapter recyclerAdapter;
-    RelativeLayout relativeLayout;
+    LinearLayout relativeLayout;
 
     Switch aSwitch;
-
+    TextView signIn;
     int position;
     Shoes shoes;
 
@@ -58,7 +57,6 @@ public class FirstActivity extends AppCompatActivity implements OnRecyclerItemCl
         setContentView(R.layout.activity_first);
         getSupportActionBar().setTitle("Blue Pop");
 
-        tts();
         relativeLayout = findViewById(R.id.relative);
         recyclerView = findViewById(R.id.recyclerView);
         list = new ArrayList<>();
@@ -142,39 +140,17 @@ public class FirstActivity extends AppCompatActivity implements OnRecyclerItemCl
                 }
             }
         });
-        return true;
-    }
 
-    public void tts(){
-
-        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+        signIn = item.getActionView().findViewById(R.id.SignIn);
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onInit(int status) {
+            public void onClick(View v) {
 
-                if(tts.getEngines().size() == 0){
-                    Toast.makeText(FirstActivity.this, "Please enable TTS in your settings", Toast.LENGTH_SHORT).show();
-                    finish();
-                }else{
-                    tts.setLanguage(Locale.US);
-                    speak("Welcome To Blue Pop");
-                    //speak("Enter your name");
-                }
+                Intent intent = new Intent(FirstActivity.this,RegistrationActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
-    }
-
-
-    private void speak(String s) {
-        //if(Build.VERSION.SDK_INT >=21){
-        tts.speak(s,TextToSpeech.QUEUE_FLUSH,null);
-        /*}else{
-            tts.speak(s,TextToSpeech.QUEUE_FLUSH,null);
-        }*/
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        tts.shutdown();
+        return true;
     }
 }

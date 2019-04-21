@@ -19,13 +19,34 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RegistrationActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText eTxtName,eTxtEmail,eTxtPassword;
+    @BindView(R.id.editTextName)
+    EditText editextName;
+
+    @BindView(R.id.editTextPhone)
+    EditText editTextPhone;
+
+    @BindView(R.id.editTextEmail)
+    EditText editTextEmail;
+
+    @BindView(R.id.editTextPassword)
+    EditText editTextPassword;
+
+    @BindView(R.id.editTextAddress)
+    EditText editTextAddress;
+
+    @BindView(R.id.buttonRegister)
+    Button buttonRegister;
+
+    @BindView(R.id.textViewLogin)
     TextView txtLogin;
-    Button btnRegister;
 
     User user;
 
@@ -35,13 +56,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     FirebaseUser firebaseUser;
 
     void initViews(){
-        eTxtName = findViewById(R.id.editTextName);
-        eTxtEmail = findViewById(R.id.editTextEmail);
-        eTxtPassword = findViewById(R.id.editTextPassword);
-        btnRegister = findViewById(R.id.buttonRegister);
-        txtLogin = findViewById(R.id.textViewLogin);
 
-        btnRegister.setOnClickListener(this);
+        buttonRegister.setOnClickListener(this);
         txtLogin.setOnClickListener(this);
 
         progressDialog = new ProgressDialog(this);
@@ -59,6 +75,8 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        ButterKnife.bind(this);
         initViews();
     }
 
@@ -69,9 +87,12 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
         int id = v.getId();
         if (id == R.id.buttonRegister) {
             //Get the data from UI and put it into User Object
-            user.name = eTxtName.getText().toString();
-            user.email = eTxtEmail.getText().toString();
-            user.password = eTxtPassword.getText().toString();
+            user.name = editextName.getText().toString();
+            user.email = editTextEmail.getText().toString();
+            user.password = editTextPassword.getText().toString();
+            user.phone = editTextPhone.getText().toString();
+            user.address = editTextAddress.getText().toString();
+
 
             if(Util.isInternetConnected(this)) {
                 progressDialog.show();
@@ -108,7 +129,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
 
     void saveUserInCloudDB(){
 
-        /*db.collection("users").add(user)
+        db.collection("Customers").add(user)
                 .addOnCompleteListener(this, new OnCompleteListener<DocumentReference>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentReference> task) {
@@ -116,26 +137,26 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
                             Toast.makeText(RegistrationActivity.this, user.name + "Registered Sucessfully", Toast.LENGTH_LONG).show();
                             progressDialog.dismiss();
 
-                            Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                            Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
                         }
                     }
-                });*/
+                });
 
-        db.collection("users").document(firebaseUser.getUid()).set(user)
-        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isComplete()) {
-                    Toast.makeText(RegistrationActivity.this, user.name + "Registered Sucessfully", Toast.LENGTH_LONG).show();
-                    progressDialog.dismiss();
-
-                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
+//        db.collection("Customers").document(firebaseUser.getUid()).set(user)
+//        .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if(task.isComplete()) {
+//                    Toast.makeText(RegistrationActivity.this, user.name + "Customer Registered Sucessfully", Toast.LENGTH_LONG).show();
+//                    progressDialog.dismiss();
+//
+//                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//            }
+//        });
     }
 }

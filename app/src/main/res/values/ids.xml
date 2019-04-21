@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <item name="imageView" type="id" />
+    <item name="textViewColor" type="id" />
+    <item name="textViewPrice" type="id" />
+    <item name="textViewName" type="id" />
+    <item name="textViewId" type="id" />
+    <item name="textViewSize" type="id" />
+    <item name="action_logout" type="id" />
+    <item name="text_item_name" type="id" />
+    <item name="image_item_image" type="id" />
+    <item name="text_item_price" type="id" />
+    <item name="googlepay_button" type="id" />
+    <item name="googlepay_status" type="id" />
+</resources>

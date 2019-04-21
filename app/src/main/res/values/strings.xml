@@ -1,15 +1,5 @@
 <resources>
-    <string name="app_name">Blue Pop</string>
-
-    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
-    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
-    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
-
-    <!-- Twitter consumer key and secret -->
-    <string name="twitter_consumer_key" translatable="false">YOUR_CONSUMER_KEY</string>
-    <string name="twitter_consumer_secret" translatable="false">YOUR_CONSUMER_SECRET</string>
-
-
+    <string name="app_name">USER</string>
     <string name="camera_button_text">Upload</string>
     <string name="sign_in_prompt">Sign In to begin</string>
     <string name="take_photo_prompt">Upload a Photo</string>
@@ -21,6 +11,10 @@
     <string name="log_out">Log out</string>
     <string name="success">Success</string>
 
+    <string name="customer">CUSTOMER INFO</string>
+    <string name="register">REGISTER CUSTOMER</string>
+
+
     <string name="progress_downloading">Downloading…</string>
     <string name="progress_uploading">Uploading…</string>
     <string name="progress_auth">Signing In…</string>
@@ -30,4 +24,44 @@
 
     <string name="download_success">Download finished</string>
     <string name="download_failure">Download failure</string>
+
+    <string name="store_name" translatable="false">My Online Store</string>
+    <string name="googlepay_status_unavailable" translatable="false">Unfortunately, Google Pay is not available on this phone.</string>
+    <string name="googlepay_status_checking" translatable="false">Checking if Google Pay is available...</string>
+    <string name="payments_show_name" translatable="false">Successfully received payment data for %s!</string>
+
+    <string name="googlepay_button_content_description" translatable="false">Google Pay</string>
+    <string name="buy_with_googlepay_button_content_description" translatable="false">Buy with Google Pay</string>
+    <string name="save_to_googlepay_button_content_description" translatable="false">Save to Google Pay</string>
+    <string name="add_to_googlepay_button_content_description" translatable="false">Add to Google Pay</string>
+
+    <!--&lt;!&ndash; Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). &ndash;&gt;-->
+    <!--<string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>-->
+    <!--<string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>-->
+
+    <!--&lt;!&ndash; Twitter consumer key and secret &ndash;&gt;-->
+    <!--<string name="twitter_consumer_key" translatable="false">YOUR_CONSUMER_KEY</string>-->
+    <!--<string name="twitter_consumer_secret" translatable="false">YOUR_CONSUMER_SECRET</string>-->
+
+
+    <!--<string name="camera_button_text">Upload</string>-->
+    <!--<string name="sign_in_prompt">Sign In to begin</string>-->
+    <!--<string name="take_photo_prompt">Upload a Photo</string>-->
+    <!--<string name="download">Download</string>-->
+    <!--<string name="sign_in_anonymously">Sign In</string>-->
+    <!--<string name="rationale_storage">This sample reads images from your camera to demonstrate uploading.</string>-->
+    <!--<string name="label_link">Link to Uploaded File</string>-->
+    <!--<string name="label_download">Download File</string>-->
+    <!--<string name="log_out">Log out</string>-->
+    <!--<string name="success">Success</string>-->
+
+    <!--<string name="progress_downloading">Downloading…</string>-->
+    <!--<string name="progress_uploading">Uploading…</string>-->
+    <!--<string name="progress_auth">Signing In…</string>-->
+
+    <!--<string name="upload_success">Upload finished</string>-->
+    <!--<string name="upload_failure">Upload failed</string>\-->
+
+    <!--<string name="download_success">Download finished</string>-->
+    <!--<string name="download_failure">Download failure</string>-->
 </resources>

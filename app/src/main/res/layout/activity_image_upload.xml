@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <ScrollView
+                tools:context=".storage.ImageUploadActivity"
+                android:scrollbars="vertical"
+                android:fillViewport="true"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/firebaseLogo"
+        />
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layoutSignin"
+        tools:visibility="gone">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:id="@+id/statusSignIn"
+        android:text="@string/sign_in_prompt"
+        style="@style/TextAppearance.AppCompat.Medium"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/buttonSignIn"
+        android:text="@string/sign_in_anonymously"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layoutStorage"
+        tools:visibility="visible"
+        android:visibility="gone">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:text="@string/take_photo_prompt"
+        style="@style/TextAppearance.AppCompat.Medium"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/buttonCamera"
+        android:text="@string/camera_button_text"/>
+
+</LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/layoutDownload"
+        tools:visibility="visible"
+        android:visibility="gone">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:text="@string/label_link"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="@dimen/margin_2"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/pictureDownloadUri"
+        tools:text="Image Download link will come here"
+        android:autoLink="web"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:text="@string/label_download"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="@dimen/margin_2"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/buttonDownload"
+        android:text="@string/download"/>
+
+</LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>
