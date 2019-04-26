@@ -19,6 +19,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".fragments.BottomNavActivity"
+            android:label="@string/title_activity_bottom_nav"></activity>
+        <activity android:name=".ui.LoginMainActivity" />
+        <activity android:name=".ui.PhoneAuthActivity" />
+        <activity android:name=".ui.RegistrationActivity" />
+        <activity android:name=".ui.AddCartActivity" />
+        <activity android:name=".ui.DisplayActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.FirstActivity" />
 
         <service
             android:name=".storage.MyDownloadService"
@@ -33,13 +43,6 @@
         <activity
             android:name=".storage.ImageUploadActivity"
             android:launchMode="singleTask" />
-        <activity android:name=".ui.ViewProductActivity" />
-        <activity android:name=".ui.AdminUserActivity" />
-        <activity android:name=".ui.AddProductActivity" />
-        <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.DisplayActivity" />
-        <activity android:name=".ui.FirstActivity" />
-        <activity android:name=".ui.PhoneAuthActivity" />
 
         <provider
             android:name=".provider.MyContentProvider"
@@ -47,8 +50,6 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.RegistrationActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

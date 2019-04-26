@@ -1,15 +1,20 @@
 <resources>
-    <string name="app_name">USER</string>
+    <string name="app_name">BLUE POP</string>
     <string name="camera_button_text">Upload</string>
     <string name="sign_in_prompt">Sign In to begin</string>
     <string name="take_photo_prompt">Upload a Photo</string>
     <string name="download">Download</string>
+    <string name="login">USER LOGIN</string>
+
     <string name="sign_in_anonymously">Sign In</string>
     <string name="rationale_storage">This sample reads images from your camera to demonstrate uploading.</string>
     <string name="label_link">Link to Uploaded File</string>
     <string name="label_download">Download File</string>
     <string name="log_out">Log out</string>
     <string name="success">Success</string>
+
+    <string name="email">Sign In With Email </string>
+    <string name="phone">Sign In With Phone</string>
 
     <string name="customer">CUSTOMER INFO</string>
     <string name="register">REGISTER CUSTOMER</string>
@@ -34,6 +39,21 @@
     <string name="buy_with_googlepay_button_content_description" translatable="false">Buy with Google Pay</string>
     <string name="save_to_googlepay_button_content_description" translatable="false">Save to Google Pay</string>
     <string name="add_to_googlepay_button_content_description" translatable="false">Add to Google Pay</string>
+
+    <string name="title_activity_bluepop">Bluepop</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Login</string>
+    <string name="title_notifications">Cart</string>
+    <string name="title_activity_bdisplay">BDisplayActivity</string>
+    <string name="title_activity_cart">CartActivity</string>
+    <string name="title_activity_blogin">BLoginActivity</string>
+    <string name="title_activity_blogin_main">BLoginMainActivity</string>
+    <string name="title_activity_bphone_auth">BPhoneAuthActivity</string>
+    <string name="title_activity_bregistration">BRegistrationActivity</string>
+    <string name="title_activity_bottom_nav">BottomNavActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--&lt;!&ndash; Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). &ndash;&gt;-->
     <!--<string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>-->

@@ -3,8 +3,10 @@ package com.example.firebasedemo.adapter;
 import com.example.firebasedemo.R;
 import com.example.firebasedemo.listener.OnRecyclerItemClickListener;
 import com.example.firebasedemo.model.Shoes;
+import com.example.firebasedemo.ui.DisplayActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -40,13 +42,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         View view = LayoutInflater.from(context).inflate(resource,viewGroup,false);
         final RecyclerAdapter.ViewHolder holder = new RecyclerAdapter.ViewHolder(view);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerItemClickListener.onItemClick(holder.getAdapterPosition());
-
-            }
-        });
         return holder;
     }
 
@@ -56,36 +51,56 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         Shoes shoes = objects.get(position);
 
         holder.imageView.setBackgroundResource(shoes.image);
-        holder.txtName.setText(shoes.name);
-        holder.txtPrice.setText(shoes.price);
-        holder.txtId.setText(shoes.id);
-        holder.txtColor.setText(shoes.color);
-        holder.txtSize.setText(shoes.size);
+        holder.textViewName.setText(shoes.name);
+        holder.textViewPrice.setText("₹  "+shoes.price);
+        holder.textViewId.setText(shoes.id);
+        holder.textViewColor.setText(shoes.color);
+        holder.textViewSize.setText(shoes.size);
+
     }
 
     @Override
     public int getItemCount() {
+
         return objects.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView txtPrice;
-        TextView txtId;
-        TextView txtColor;
-        TextView txtSize;
-        TextView txtName;
+        TextView textViewPrice;
+        TextView textViewId;
+        TextView textViewColor;
+        TextView textViewSize;
+        TextView textViewName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
-            txtName= itemView.findViewById(R.id.textViewName);
-            txtPrice = itemView.findViewById(R.id.textViewPrice);
-            txtId = itemView.findViewById(R.id.textViewId);
-            txtColor = itemView.findViewById(R.id.textViewColor);
-            txtSize = itemView.findViewById(R.id.textViewSize);
+            textViewName = itemView.findViewById(R.id.textViewName);
+            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewId = itemView.findViewById(R.id.textViewId);
+            textViewColor = itemView.findViewById(R.id.textViewColor);
+            textViewSize = itemView.findViewById(R.id.textViewSize);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    recyclerItemClickListener.onItemClick(getAdapterPosition());
+
+                    Intent i = new Intent(context, DisplayActivity.class);
+                    i.putExtra("keyName",textViewName.getText().toString());
+                    i.putExtra("keyPrice",textViewPrice.getText().toString());
+                    i.putExtra("keyId",textViewId.getText().toString());
+                    i.putExtra("keyColor",textViewColor.getText().toString());
+                    i.putExtra("keySize",textViewSize.getText().toString());
+                    context.startActivity(i);
+
+                }
+            });
+
         }
+
     }
 }

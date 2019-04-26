@@ -16,23 +16,31 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText eTxtEmail, eTxtPassword;
+    @BindView(R.id.editTextEmail)
+    EditText eTxtEmail;
+
+    @BindView(R.id.editTextPassword)
+    EditText eTxtPassword;
+
+    @BindView(R.id.buttonLogin)
     Button btnLogin;
+
     ProgressDialog progressDialog;
     User user;
     FirebaseAuth auth;
 
     void initViews() {
-        eTxtEmail = findViewById(R.id.editTextEmail);
-        eTxtPassword = findViewById(R.id.editTextPassword);
-        btnLogin = findViewById(R.id.buttonLogin);
+
+        ButterKnife.bind(this);
         user = new User();
         btnLogin.setOnClickListener(this);
 
@@ -65,6 +73,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Matcher matcher = Pattern.compile(validemail).matcher(email);
         if(matcher.matches()){
             Toast.makeText(getApplicationContext(),"Login",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(getApplicationContext()," Login",Toast.LENGTH_LONG).show();
         }
         if (eTxtEmail.getText().toString().trim().length() == 0) {
             eTxtEmail.setError("Email is not entered");
@@ -76,11 +86,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         } else {
 
             user.email = eTxtEmail.getText().toString();
-        user.password = eTxtPassword.getText().toString();
-        loginUser();
-    }
+            user.password = eTxtPassword.getText().toString();
+            loginUser();
+        }
 
-}
+    }
     void loginUser(){
         progressDialog.show();
 

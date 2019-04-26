@@ -68,7 +68,7 @@ public class MyBaseTaskService extends Service {
 
         createDefaultChannel();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID_DEFAULT)
-                .setSmallIcon(R.drawable.pic1)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(caption)
                 .setProgress(100, percentComplete, false)

@@ -66,13 +66,4 @@
         android:textColor="@color/colorThree"
         android:text="Register Me" />
 
-    <TextView
-        android:id="@+id/textViewLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Login Here" />
 </LinearLayout>
