@@ -19,12 +19,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.PictureActivity"></activity>
+        <activity android:name=".ui.OrdersActivity" />
         <activity
-            android:name=".fragments.BottomNavActivity"
-            android:label="@string/title_activity_bottom_nav"></activity>
+            android:name=".ui.PaymentActivity"
+            android:label="Razorpay Sample App" />
+        <activity android:name=".ui.RegistrationActivity" />
         <activity android:name=".ui.LoginMainActivity" />
         <activity android:name=".ui.PhoneAuthActivity" />
-        <activity android:name=".ui.RegistrationActivity" />
         <activity android:name=".ui.AddCartActivity" />
         <activity android:name=".ui.DisplayActivity" />
         <activity android:name=".ui.LoginActivity" />
@@ -58,6 +60,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_ILgsfZCZoFIKMb" />
     </application>
 
 </manifest>

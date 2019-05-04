@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_marginTop="10dp"
     tools:context=".ui.RegistrationActivity">
 
 
@@ -13,10 +14,10 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:textColor="@color/colorTwo"
         android:text="Register Yourself"
-        android:layout_gravity="center"/>
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorThree"/>
 
     <EditText
         android:id="@+id/editTextName"
@@ -24,15 +25,15 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:layout_marginTop="20dp"
-        android:hint="Enter Name" />
+        android:hint="Enter Your Name" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Enter Email"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:hint="Enter Your Email" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -40,30 +41,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:inputType="textPassword"
-        android:hint="Enter Password"/>
+        android:hint="Enter Password" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:inputType="phone"
-        android:hint="Enter Phone"/>
+        android:inputType="textPersonName"
+        android:hint="Enter Your Phone" />
+
     <EditText
         android:id="@+id/editTextAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:inputType="textPersonName"
-        android:hint="Enter Address"/>
+        android:hint="Enter Your Address" />
 
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:text="Register"
         android:background="@color/colorOne"
-        android:textColor="@color/colorThree"
-        android:text="Register Me" />
-
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorThree"/>
 </LinearLayout>

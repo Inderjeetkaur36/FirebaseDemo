@@ -107,6 +107,7 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     public void saveDataTocart(){
+        firebaseUser = auth.getCurrentUser();
         db.collection("Persons").document(firebaseUser.getUid())
                 .collection("Cart").add(shoes)
                 .addOnCompleteListener(this, new OnCompleteListener<DocumentReference>() {

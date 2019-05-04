@@ -24,9 +24,9 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
     ArrayList<Shoes> objects;
     OnRecyclerItemClickListener recyclerItemClickListener;
 
-//    public void setOnRecyclerItemClickListener(OnRecyclerItemClickListener recyclerItemClickListener){
-//        this.recyclerItemClickListener = recyclerItemClickListener;
-//    }
+    public void setOnRecyclerItemClickListener(OnRecyclerItemClickListener recyclerItemClickListener){
+        this.recyclerItemClickListener = recyclerItemClickListener;
+    }
 
     public CartRecyclerAdapter(Context context, int resource, ArrayList<Shoes> objects) {
 
@@ -50,7 +50,7 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
         Shoes shoes = objects.get(position);
 
       //  holder.imageView.setBackgroundResource(shoes.image);
-       // holder.textViewName.setText(shoes.name);
+        holder.textViewName.setText(shoes.name);
         holder.textViewPrice.setText(shoes.price);
         holder.textViewId.setText(shoes.id);
        // holder.textViewColor.setText(shoes.color);
@@ -70,13 +70,13 @@ public class CartRecyclerAdapter extends RecyclerView.Adapter<CartRecyclerAdapte
         TextView textViewId;
       //  TextView textViewColor;
       //  TextView textViewSize;
-      //  TextView textViewName;
+        TextView textViewName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
           ///  imageView = itemView.findViewById(R.id.imageView);
-          //  textViewName = itemView.findViewById(R.id.textViewName);
+            textViewName = itemView.findViewById(R.id.textViewName);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             textViewId = itemView.findViewById(R.id.textViewId);
           //  textViewColor = itemView.findViewById(R.id.textViewColor);
